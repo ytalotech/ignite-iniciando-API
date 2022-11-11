@@ -1,0 +1,8 @@
+{
+  "name": "ignite-iniciando-API",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ytalotech/ignite-iniciando-API.git",
+  "author": "lopessoftec <lopessoftec@gmail.com>",
+  "license": "MIT"
+}
