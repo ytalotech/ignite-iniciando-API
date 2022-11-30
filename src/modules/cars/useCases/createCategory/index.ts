@@ -9,5 +9,5 @@ export default (): CreateCategoryController => {
 
     const createCategoryController = new CreateCategoryController(createCategoryUseCase);
 
-    return createCategoryController
+    return createCategoryController;
 }
