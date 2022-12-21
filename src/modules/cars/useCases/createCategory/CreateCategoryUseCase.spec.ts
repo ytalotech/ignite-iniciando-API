@@ -13,7 +13,7 @@ describe("Create Category", () => {
         createCategoryUseCase = new CreateCategoryUseCase(categoriesRepositoryInMemory);
     })
 
-    it("Should be able to create a new category", async () => {
+    it("should be able to create a new category", async () => {
         const category = {
             name: "Category Test",
             description: "Category description test"
@@ -26,12 +26,10 @@ describe("Create Category", () => {
 
         const categoryCreated = await categoriesRepositoryInMemory.findByName(category.name);
 
-        console.log(categoryCreated);
-
         expect(categoryCreated).toHaveProperty("id");
     });
 
-    it("Should not be able to create a new category with same name exists", async () => {
+    it("should not be able to create a new category with same name exists", async () => {
 
         expect(async () => {
             const category = {
