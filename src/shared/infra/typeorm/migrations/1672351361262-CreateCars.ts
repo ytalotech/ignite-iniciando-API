@@ -1,4 +1,4 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
 export class CreateCars1672351361262 implements MigrationInterface {
 
@@ -13,8 +13,8 @@ export class CreateCars1672351361262 implements MigrationInterface {
                         isPrimary: true
                     },
                     {
-                       name: "name",
-                       type: "varchar" 
+                        name: "name",
+                        type: "varchar"
                     },
                     {
                         name: "description",
@@ -38,7 +38,7 @@ export class CreateCars1672351361262 implements MigrationInterface {
                         type: "numeric"
                     },
                     {
-                        name: "brnad",
+                        name: "brand",
                         type: "varchar"
                     },
                     {
