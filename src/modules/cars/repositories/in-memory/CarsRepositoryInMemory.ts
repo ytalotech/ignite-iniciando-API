@@ -4,6 +4,7 @@ import { ICarsRepository } from "../ICarsRepository";
 
 // control + . em cima da classe paraw pegar os metodos interface
 class CarsRepositoryInMemory implements ICarsRepository {
+
     cars: Car[] = [];
     async create({ brand, category_id, daily_rate, description, fine_amount, name, license_plate }: ICreateCarDTO): Promise<Car> {
         const car = new Car();
@@ -25,6 +26,19 @@ class CarsRepositoryInMemory implements ICarsRepository {
 
     async findByLicensePlate(license_plate: string): Promise<Car> {
         return this.cars.find(car => car.license_plate === license_plate)
+    }
+
+    async findAvailable(brand?: string, category_id?: string, name?: string): Promise<Car[]> {
+
+        // se existir brand
+        // brand &&
+        const cars = this.cars.filter((car) => {
+            if (car.available === true && (brand && car.brand === brand || (category_id && car.category_id === category_id)) || (name && car.name === name)) {
+                return car;
+            }
+            return null;
+        })
+        return cars;
     }
 }
 
