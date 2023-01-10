@@ -39,7 +39,6 @@ O usuário responsavel pelo cadastro deve ser um usuário administrador.
 
 **RF**
 Deve ser possivel cadastrar a imagem do carro.
-Deve ser possivel listar todos os carros.
 
 **RNF**
 Utilizar o multer para upload dos arquivos.
