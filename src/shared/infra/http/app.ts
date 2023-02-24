@@ -13,11 +13,14 @@ import "@shared/container";
 import upload from "@config/upload";
 import { AppError } from "@shared/errors/AppError";
 
-import { router } from "./routes";
 import swaggerFile from "../../../swagger.json";
+import { router } from "./routes";
+import rateLimiter from "@shared/infra/http/middlewares/rateLimiter";
 
 createConnection();
 const app = express();
+
+app.use(rateLimiter);
 
 app.use(express.json());
 
