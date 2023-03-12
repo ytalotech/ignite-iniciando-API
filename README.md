@@ -1,6 +1,86 @@
-**RF** => Requisitos funcionais
-**RNF** => Requisitos não funcionais
-**RN** => Regra de negócio
+# Rentx
+Aplicação backend rent cars.
+
+## Iniciando a aplicação
+Iremos utilizar o docker para subir nossa aplicação.
+
+Lembre-se de atualizar a baseURL em services/api.ts com o endereço IP da sua máquina para utilizar o back-end.
+
+Caso tenha uma porta local postgres em uso, você irá precisar parar ela:
+
+```bash
+sudo service postgresql stop
+```
+
+Caso tenha uma porta local redis em uso, você irá precisar parar ela:
+
+```bash
+/etc/init.d/redis-server stop
+```
+
+Para iniciar o docker usaremos esses comandos:
+
+```bash
+docker-compose down
+docker-compose up -d
+```
+
+Temos que rodar a migration:
+
+```bash
+yarn typeorm migration:run
+```
+
+Temos que rodar a seed:
+
+```bash
+yarn seed:admin
+```
+
+Comando para ver o log do docker, se está tudo funcionado:
+
+```bash
+docker logs rentx -f
+```
+
+Podemos parar e iniciar a aplicação usando esses comandos também:
+
+```bash
+docker stop rentx
+
+docker start rentx
+```
+
+Para visualizar a documentação podemos acessar:
+
+```bash
+http://localhost:3333/api-docs/
+```
+
+
+## Rotas da API
+Para visualizar exemplos testados de todas as rotas da API, você pode importar no seu Insomnia o arquivo: api/rotas_Insomnia.json 
+
+
+## Stack
+
+- Typescript
+- Nodejs
+
+## Features
+- Autenticação usuário
+- Criação novo usuário
+- Atualização perfil
+- Listagm de carros
+- E mais...
+
+# Definições
+
+**RF** => Requisitos funcionais.
+
+**RNF** => Requisitos não funcionais.
+
+**RN** => Regra de negócio.
 
 # Cadastro de carro
 
