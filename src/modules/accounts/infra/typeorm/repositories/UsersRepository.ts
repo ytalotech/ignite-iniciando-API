@@ -3,7 +3,6 @@ import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepositor
 import { getRepository, Repository } from "typeorm";
 import { User } from "../entities/User";
 
-
 class UsersRepository implements IUsersRepository {
     private respository: Repository<User>;
 
